@@ -26,8 +26,12 @@ async fn handle_connection(
                     Some(Ok(msg)) => {
                         if let Some(text) = msg.as_text() {
                             println!("From client {addr:?} {text:?}");
-                            // Broadcast the message to all other connected clients
-                            let _ = bcast_tx.send(text.into());
+
+                            // EXPERIMENT 2.3 CHANGE: Format the message to include the sender's address
+                            let formatted_message = format!("{}: {}", addr, text);
+
+                            // Broadcast the newly formatted message to all other connected clients
+                            let _ = bcast_tx.send(formatted_message);
                         }
                     }
                     Some(Err(err)) => return Err(err.into()),

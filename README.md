@@ -37,3 +37,9 @@ Ketika saya run client 1 dan 2 gagal terhubung karena keduanya masih menjalankan
 ![img_5.png](img_5.png)
 
 Biar semua client bisa berjalan, proses untuk Client 1 dan 2 di terminal harus dihentikan dulu lalu dijalankan ulang supaya menggunakan kode port 8080 yang sudah diperbarui.
+
+## Experiment 2.3: Small changes, add IP and Port
+
+![img_6.png](img_6.png)
+
+Pada modifikasi ini, saya menambah logika di server untuk mengambil informasi IP dan Port pengirim (dari addr), lalu menggabungkannya dengan teks pesan menggunakan makro format! sebelum pesan di-broadcast. Hasilnya setiap client yang terhubung kini dapat melihat identitas (IP dan Port) dari pengirim di setiap pesan yang masuk.
