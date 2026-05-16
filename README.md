@@ -27,3 +27,13 @@ Executor-nya didesain untuk terus running selama spawner-nya ada. Kalau drop(spa
 ![img_3.png](img_3.png)
 
 Saya run nya dengan membuka 4 terminal, 1 untuk server dan 3 untuk client, saya menegtik 3 message yang berbeda-beda. Ternyata message yang terkirim balik di client 1 adalah semua message dan di client 2 adalah message dari client 2 dan 3, serta di client 3 hanya message yang dikirim client 3.
+
+## Experiment 2.2: Modifying port
+
+![img_4.png](img_4.png)
+
+Ketika saya run client 1 dan 2 gagal terhubung karena keduanya masih menjalankan versi program sebelumnya yang memakai port lama (2000), sedangkan Server dan Client 3 sudah di-compile dan dijalankan ulang menggunakan port yang baru (8080).
+
+![img_5.png](img_5.png)
+
+Biar semua client bisa berjalan, proses untuk Client 1 dan 2 di terminal harus dihentikan dulu lalu dijalankan ulang supaya menggunakan kode port 8080 yang sudah diperbarui.
