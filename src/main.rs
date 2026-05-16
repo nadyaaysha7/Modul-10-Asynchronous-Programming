@@ -100,17 +100,28 @@ fn main() {
     let (executor, spawner) = new_executor_and_spawner();
 
     // Spawn a task to print before and after waiting on a timer.
+    // Task 1
     spawner.spawn(async {
-        // Replace with your signature
         println!("Nadya's Computer: howdy!");
-
-        // Wait for our timer future to complete after two seconds.
         TimerFuture::new(Duration::new(2, 0)).await;
-
         println!("Nadya's Computer: done!");
     });
 
-    println!("Nadya's Computer: hey hey");
+    // Task 2
+    spawner.spawn(async {
+        println!("Nadya's Computer: howdy2!");
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("Nadya's Computer: done2!");
+    });
+
+    // Task 3
+    spawner.spawn(async {
+        println!("Nadya's Computer: howdy3!");
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("Nadya's Computer: done3!");
+    });
+
+    // println!("Nadya's Computer: hey hey");
 
     // Drop the spawner so that our executor knows it is finished and won't
     // receive more incoming tasks to run.
