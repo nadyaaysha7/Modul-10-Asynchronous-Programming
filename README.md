@@ -43,3 +43,7 @@ Biar semua client bisa berjalan, proses untuk Client 1 dan 2 di terminal harus d
 ![img_6.png](img_6.png)
 
 Pada modifikasi ini, saya menambah logika di server untuk mengambil informasi IP dan Port pengirim (dari addr), lalu menggabungkannya dengan teks pesan menggunakan makro format! sebelum pesan di-broadcast. Hasilnya setiap client yang terhubung kini dapat melihat identitas (IP dan Port) dari pengirim di setiap pesan yang masuk.
+
+## Experiment 3.1: Original code
+
+![img_7.png](img_7.png)
